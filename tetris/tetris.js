@@ -1,23 +1,61 @@
 class Tetris {
     constructor() {
-        this.run       = 0;
-        this.x         = 0; // X changing position 
-        this.y         = 0; // Y changing position 
-        this.xDefault  = 15; // X Startpositie
-        this.yDefault  = 0; // Y Startpositie 
-        this.xNew      = 0; // Nieuwe X positie 
+        this.run            = 0;
+        this.x              = 0; // X changing position
+        this.y              = 0; // Y changing position
+        this.xDefault       = 15; // X Startpositie
+        this.yDefault       = 0; // Y Startpositie
+        this.xNew           = 0; // Nieuwe X positie
         this.blockSize      = 10; // Grootte per blok in pixels
         this.canvaswidth    = 30 * this.blockSize;
         this.canvasheight   = 60 * this.blockSize;
         this.started        = false; // Spel nog niet gestart
         this.frameRate      = 100; // Aantal frames per seconde
         this.blocks         = [];
-        this.shape1         = {
-            x1:0, y1:1,
-            x2:0, y2:2,
-            x3:0, y3:3,
-            color:"aquamarine"
-        }
+        this.shapes         = [
+            {
+                x1:0, y1:1,
+                x2:0, y2:2,
+                x3:0, y3:3,
+                color:"lightblue"
+            },
+            {
+                x1:1, y1:0,
+                x2:0, y2:1,
+                x3:0, y3:2,
+                color:"blue"
+            },
+            {
+                x1:-1, y1:0,
+                x2:0, y2:1,
+                x3:0, y3:2,
+                color:"orange"
+            },
+           {
+                x1:0, y1:1,
+                x2:1, y2:1,
+                x3:1, y3:0,
+                color:"yellow"
+            },
+            {
+                x1:0, y1:-1,
+                x2:-1, y2:0,
+                x3:1, y3:0,
+                color:"purple"
+            },
+            {
+                x1:1, y1:0,
+                x2:-1, y2:0,
+                x3:-1, y3:-1,
+                color:"green"
+            },
+            {
+                x1:-1, y1:0,
+                x2:1, y2:0,
+                x3:1, y3:1,
+                color:"red"
+            }
+        ];
 
 
         document.addEventListener("DOMContentLoaded", () => {
@@ -26,12 +64,20 @@ class Tetris {
         });
     }
 
-    start() {
-        if (!this.started) {
-            this.started = true;
-            document.addEventListener('keydown', this.keyPressed.bind(this));
-            this.reset();
-        }
+    //random int generator
+    getRandomInt() {
+        return Math.floor(Math.random() * Math.floor(7));
+    }
+
+    // Deze functie is om simpel een blok te selecteren en rekening te houden met padding
+    drawBlock(x, y, color,padding = 1) {
+        this.ctx.fillStyle = color;
+        this.ctx.fillRect(
+            x * this.blockSize + padding,
+            y * this.blockSize + padding,
+            this.blockSize - (padding * 2),
+            this.blockSize - (padding * 2)
+        );
     }
 
     createCanvas() {
@@ -45,74 +91,69 @@ class Tetris {
         this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
     }
 
+    start() {
+        if (!this.started) {
+            this.started = true;
+            document.addEventListener('keydown', this.keyPressed.bind(this));
+            this.reset();
+        }
+    }
 
     keyPressed() {
         const arrows = {
-            ArrowLeft:  {x: -1},
-            ArrowRight: {x: 1}
+            ArrowLeft:  {type: 'move', x: -1},
+            ArrowRight: {type: 'move', x: 1}
+            ArrowUp:    {type: 'rotate', x: 1}
         };
 
-        if (arrows[event.key]){
+        if (arrows[event.key].type === 'move')
+        {
             this.xNew = arrows[event.key].x;
-        }
 
-        this.x += this.xNew;
+            this.x += this.xNew;
 
-        if (
-            this.x >= this.canvaswidth / this.blockSize ||
-            this.x < 0 ||
-            this.x + this.activeshape.x1 >= this.canvaswidth / this.blockSize ||
-            this.x + this.activeshape.x1 < 0 ||
-            this.x + this.activeshape.x2 >= this.canvaswidth / this.blockSize ||
-            this.x + this.activeshape.x2 < 0 ||
-            this.x + this.activeshape.x3 >= this.canvaswidth / this.blockSize ||
-            this.x + this.activeshape.x3 < 0
-        ){
-            this.x -= this.xNew;
+            if (
+                this.x >= this.canvaswidth / this.blockSize ||
+                this.x < 0 ||
+                this.x + this.activeshape.x1 >= this.canvaswidth / this.blockSize ||
+                this.x + this.activeshape.x1 < 0 ||
+                this.x + this.activeshape.x2 >= this.canvaswidth / this.blockSize ||
+                this.x + this.activeshape.x2 < 0 ||
+                this.x + this.activeshape.x3 >= this.canvaswidth / this.blockSize ||
+                this.x + this.activeshape.x3 < 0
+            ){
+                this.x -= this.xNew;
+                this.move = false;
+            } else {
 
-        } else {
-
-            this.ctx.fillStyle = 'black';
-            this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
-
-            //Render existing blocks
-            for (let i = 0; i < this.blocks.length; i++) {
-                this.drawBlock(this.blocks[i].x, this.blocks[i].y, this.blocks[i].color);
             }
 
-            this.drawBlock(this.x, this.y, this.activeshape.color);
-            this.drawBlock(this.x + this.activeshape.x1 , this.y + this.activeshape.y1, this.activeshape.color);
-            this.drawBlock(this.x + this.activeshape.x2 , this.y + this.activeshape.y2, this.activeshape.color);
-            this.drawBlock(this.x + this.activeshape.x3 , this.y + this.activeshape.y3, this.activeshape.color);
+            if (this.move){
 
-            this.xNew = 0;
+                this.ctx.fillStyle = 'black';
+                this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+
+                //Render existing blocks
+                for (let i = 0; i < this.blocks.length; i++) {
+                    this.drawBlock(this.blocks[i].x, this.blocks[i].y, this.blocks[i].color);
+                }
+
+                this.drawBlock(this.x, this.y, this.activeshape.color);
+                this.drawBlock(this.x + this.activeshape.x1 , this.y + this.activeshape.y1, this.activeshape.color);
+                this.drawBlock(this.x + this.activeshape.x2 , this.y + this.activeshape.y2, this.activeshape.color);
+                this.drawBlock(this.x + this.activeshape.x3 , this.y + this.activeshape.y3, this.activeshape.color);
+
+                this.xNew = 0;
+
+            }
+
+        } else if (arrows[event.key].type === 'rotate') {
 
         }
 
 
-        // for (let i = 0; i < this.blocks.length; i++) {
-        //     if (
-        //         this.y + 1 === this.blocks[i].y && this.x === this.blocks[i].x ||
-        //         this.y + this.activeshape.y1 + 1 === this.blocks[i].y && this.x + this.activeshape.x1 === this.blocks[i].x ||
-        //         this.y + this.activeshape.y2 + 1 === this.blocks[i].y && this.x + this.activeshape.x2 === this.blocks[i].x ||
-        //         this.y + this.activeshape.y3 + 1 === this.blocks[i].y && this.x + this.activeshape.x3 === this.blocks[i].x
-        //     ) {
-        //         this.reset()
-        //     }
-        // }
-
     }
 
-    // Deze functie is om simpel een blok te selecteren en rekening te houden met padding
-    drawBlock(x, y, color,padding = 1) {
-        this.ctx.fillStyle = color;
-        this.ctx.fillRect(
-            x * this.blockSize + padding,
-            y * this.blockSize + padding,
-            this.blockSize - (padding * 2),
-            this.blockSize - (padding * 2)
-        );
-    }
 
     reset() {
         clearInterval(this.interval);
@@ -129,10 +170,14 @@ class Tetris {
         }
 
         this.run += 1;
-        console.log(this.run);
+
+        for (let i = 0; i < this.blocks.length; i++) {
+
+        }
+
         this.x = this.xDefault;
         this.y = this.yDefault;
-        this.activeshape = this.shape1;
+        this.activeshape = this.shapes[this.getRandomInt()];
         this.interval = setInterval(this.game.bind(this), this.frameRate);
     }
     game() {
