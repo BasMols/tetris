@@ -2,7 +2,7 @@
 <project version="4">
   <component name="PublishConfigData" autoUpload="On explicit save action">
     <serverData>
-      <paths name="basmols.nl">
+      <paths name="test.basmols.nl">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
