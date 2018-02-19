@@ -4,7 +4,7 @@ class Tetris {
         this.x              = 0; // X changing position
         this.y              = 0; // Y changing position
         this.xDefault       = 5; // X Startpositie
-        this.yDefault       = 0; // Y Startpositie
+        this.yDefault       = -2; // Y Startpositie
         this.xNew           = 0; // Nieuwe X positie
         this.blockSize      = 40; // Grootte per blok in pixels
         this.canvaswidth    = 10 * this.blockSize;
@@ -14,47 +14,47 @@ class Tetris {
         this.blocks         = [];
         this.shapes         = [
             {
-                x1:0, y1:1,
-                x2:0, y2:2,
-                x3:0, y3:3,
-                color:"lightblue"
-            },
+                1: {x: 1 ,y: 0},
+                2: {x: 2 ,y: 0},
+                3: {x: 3 ,y: 0},
+                color:"cyan"
+            }, // I
             {
-                x1:1, y1:0,
-                x2:0, y2:1,
-                x3:0, y3:2,
-                color:"blue"
-            },
-            {
-                x1:-1, y1:0,
-                x2:0, y2:1,
-                x3:0, y3:2,
-                color:"orange"
-            },
-           {
-                x1:0, y1:1,
-                x2:1, y2:1,
-                x3:1, y3:0,
+                1: {x: 0 ,y: 1},
+                2: {x: 1 ,y: 1},
+                3: {x: 1 ,y: 0},
                 color:"yellow"
-            },
+            }, // O
             {
-                x1:0, y1:-1,
-                x2:-1, y2:0,
-                x3:1, y3:0,
+                1: {x: 1 ,y: 0},
+                2: {x: 0 ,y: -1},
+                3: {x: -1 ,y: 0},
                 color:"purple"
-            },
+            }, // T
             {
-                x1:1, y1:0,
-                x2:-1, y2:0,
-                x3:-1, y3:-1,
+                1: {x: 1 ,y: 0},
+                2: {x: 0 ,y: 1},
+                3: {x: -1 ,y: 1},
                 color:"green"
-            },
+            }, // S
             {
-                x1:-1, y1:0,
-                x2:1, y2:0,
-                x3:1, y3:1,
+                1: {x: -1 ,y: 0},
+                2: {x: 0 ,y: 1},
+                3: {x: 1 ,y: 1},
                 color:"red"
-            }
+            }, // Z
+            {
+                1: {x: 0 ,y: 1},
+                2: {x: 1 ,y: 1},
+                3: {x: 2 ,y: 1},
+                color:"blue"
+            }, // J
+            {
+                1: {x: 1 ,y: 0},
+                2: {x: 2 ,y: 0},
+                3: {x: 2 ,y: -1},
+                color:"orange"
+            }, // L
         ];
 
 
@@ -80,6 +80,46 @@ class Tetris {
         );
     }
 
+    checkBottom() {
+        return !(
+            this.y                         >= this.canvasheight / this.blockSize ||
+            this.y + this.activeshape[1].y >= this.canvasheight / this.blockSize ||
+            this.y + this.activeshape[2].y >= this.canvasheight / this.blockSize ||
+            this.y + this.activeshape[3].y >= this.canvasheight / this.blockSize
+        );
+
+
+
+        for (let i = 0; i < this.blocks.length; i++) {
+            if (
+                this.y                         === this.blocks[i].y && this.x                         === this.blocks[i].x ||
+                this.y + this.activeshape[1].y === this.blocks[i].y && this.x + this.activeshape[1].x === this.blocks[i].x ||
+                this.y + this.activeshape[2].y === this.blocks[i].y && this.x + this.activeshape[2].x === this.blocks[i].x ||
+                this.y + this.activeshape[3].y === this.blocks[i].y && this.x + this.activeshape[3].x === this.blocks[i].x
+            ) {
+                return false;
+            }
+        }
+        return true;
+    }
+    check2() {
+        if ( //Checks if any of the blocks hit the right side of the screen.
+            this.x                          >= this.canvaswidth / this.blockSize ||
+            this.x + this.activeshape[1].x  >= this.canvaswidth / this.blockSize ||
+            this.x + this.activeshape[2].x  >= this.canvaswidth / this.blockSize ||
+            this.x + this.activeshape[3].x  >= this.canvaswidth / this.blockSize ||
+            //Checks if any of the blocks hit the left side of the screen.
+            this.x                          < 0 ||
+            this.x + this.activeshape[1].x  < 0 ||
+            this.x + this.activeshape[2].x  < 0 ||
+            this.x + this.activeshape[3].x  < 0
+        ){
+            return false
+        } else {
+            return true
+        }
+    }
+
     createCanvas() {
         this.canvas = document.createElement('canvas');
         this.canvas.setAttribute('id', 'Canvas');
@@ -103,9 +143,9 @@ class Tetris {
 
         // Rendering
         this.drawBlock(this.x, this.y, this.activeshape.color);
-        this.drawBlock(this.x + this.activeshape.x1 , this.y + this.activeshape.y1, this.activeshape.color);
-        this.drawBlock(this.x + this.activeshape.x2 , this.y + this.activeshape.y2, this.activeshape.color);
-        this.drawBlock(this.x + this.activeshape.x3 , this.y + this.activeshape.y3, this.activeshape.color);
+        this.drawBlock(this.x + this.activeshape[1].x , this.y + this.activeshape[1].y, this.activeshape.color);
+        this.drawBlock(this.x + this.activeshape[2].x , this.y + this.activeshape[2].y, this.activeshape.color);
+        this.drawBlock(this.x + this.activeshape[3].x , this.y + this.activeshape[3].y, this.activeshape.color);
     }
 
     start() {
@@ -116,31 +156,6 @@ class Tetris {
         }
     }
 
-    check1() {
-        if (
-            this.y + 1 >= this.canvasheight / this.blockSize
-            // this.y + this.activeshape.y1 + 1 >= this.canvasheight / this.blockSize||
-            // this.y + this.activeshape.y2 + 1 >= this.canvasheight / this.blockSize||
-            // this.y + this.activeshape.y3 + 1 >= this.canvasheight / this.blockSize
-        ){
-            return false;
-        }
-
-
-        // for (let i = 0; i < this.blocks.length; i++) {
-        //     if (
-        //         this.y + 1 === this.blocks[i].y && this.x === this.blocks[i].x ||
-        //         this.y + this.activeshape.y1 + 1 === this.blocks[i].y && this.x + this.activeshape.x1 === this.blocks[i].x ||
-        //         this.y + this.activeshape.y2 + 1 === this.blocks[i].y && this.x + this.activeshape.x2 === this.blocks[i].x ||
-        //         this.y + this.activeshape.y3 + 1 === this.blocks[i].y && this.x + this.activeshape.x3 === this.blocks[i].x
-        //     ) {
-        //         return false;
-        //     }
-        // }
-        return true;
-    }
-
-
     keyPressed() {
         const arrows = {
             ArrowLeft:  {x: -1},
@@ -150,28 +165,13 @@ class Tetris {
 
             this.x += this.xNew;
 
-            if (false){
-                // this.x >= this.canvaswidth / this.blockSize ||
-                // this.x < 0 ||
-                // this.x + this.activeshape.x1 >= this.canvaswidth / this.blockSize ||
-                // this.x + this.activeshape.x1 < 0 ||
-                // this.x + this.activeshape.x2 >= this.canvaswidth / this.blockSize ||
-                // this.x + this.activeshape.x2 < 0 ||
-                // this.x + this.activeshape.x3 >= this.canvaswidth / this.blockSize ||
-                // this.x + this.activeshape.x3 < 0
-
-                this.x -= this.xNew;
-                this.move = false;
-            } else {
-                this.move = true;
-            }
-
-            if (this.move){
+            if (this.check2()){
 
                 this.render();
                 this.xNew = 0;
-                this.move = undefined;
 
+            } else {
+                this.x -= this.xNew;
             }
 
 
@@ -182,32 +182,33 @@ class Tetris {
         clearInterval(this.interval);
 
         if(this.run !== 0){
-
             this.blocks.push(
                 {x: this.x, y: this.y, color: this.activeshape.color},
-                {x: this.x + this.activeshape.x1, y: this.y + this.activeshape.y1, color: this.activeshape.color},
-                {x: this.x + this.activeshape.x2, y: this.y + this.activeshape.y2, color: this.activeshape.color},
-                {x: this.x + this.activeshape.x3, y: this.y + this.activeshape.y3, color: this.activeshape.color}
+                {x: this.x + this.activeshape[1].x, y: this.y + this.activeshape[1].y, color: this.activeshape.color},
+                {x: this.x + this.activeshape[2].x, y: this.y + this.activeshape[2].y, color: this.activeshape.color},
+                {x: this.x + this.activeshape[3].x, y: this.y + this.activeshape[3].y, color: this.activeshape.color}
             );
 
         }
 
         this.run += 1;
-
-
         this.x = this.xDefault;
         this.y = this.yDefault;
         this.activeshape = this.shapes[this.getRandomInt()];
         this.interval = setInterval(this.game.bind(this), this.frameRate);
     }
 
-    game() {
-        this.y += 1;
 
-        if (this.check1()){
-            this.render()
-        } else {
+    game() {
+
+
+        this.y++;
+
+        if (!this.checkBottom()){
+            this.y --;
             this.reset();
+        } else {
+            this.render();
         }
 
     }
