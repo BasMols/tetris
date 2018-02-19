@@ -3,14 +3,14 @@ class Tetris {
         this.run            = 0;
         this.x              = 0; // X changing position
         this.y              = 0; // Y changing position
-        this.xDefault       = 15; // X Startpositie
+        this.xDefault       = 5; // X Startpositie
         this.yDefault       = 0; // Y Startpositie
         this.xNew           = 0; // Nieuwe X positie
-        this.blockSize      = 10; // Grootte per blok in pixels
-        this.canvaswidth    = 30 * this.blockSize;
-        this.canvasheight   = 60 * this.blockSize;
+        this.blockSize      = 40; // Grootte per blok in pixels
+        this.canvaswidth    = 10 * this.blockSize;
+        this.canvasheight   = 20 * this.blockSize;
         this.started        = false; // Spel nog niet gestart
-        this.frameRate      = 100; // Aantal frames per seconde
+        this.frameRate      = 500; // Aantal frames per seconde
         this.blocks         = [];
         this.shapes         = [
             {
@@ -91,6 +91,23 @@ class Tetris {
         this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
     }
 
+    render() {
+        // Rendering Canvas
+        this.ctx.fillStyle = 'black';
+        this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+
+        //Render existing blocks
+        for (let i = 0; i < this.blocks.length; i++) {
+            this.drawBlock(this.blocks[i].x, this.blocks[i].y, this.blocks[i].color);
+        }
+
+        // Rendering
+        this.drawBlock(this.x, this.y, this.activeshape.color);
+        this.drawBlock(this.x + this.activeshape.x1 , this.y + this.activeshape.y1, this.activeshape.color);
+        this.drawBlock(this.x + this.activeshape.x2 , this.y + this.activeshape.y2, this.activeshape.color);
+        this.drawBlock(this.x + this.activeshape.x3 , this.y + this.activeshape.y3, this.activeshape.color);
+    }
+
     start() {
         if (!this.started) {
             this.started = true;
@@ -99,57 +116,63 @@ class Tetris {
         }
     }
 
+    check1() {
+        if (
+            this.y + 1 >= this.canvasheight / this.blockSize
+            // this.y + this.activeshape.y1 + 1 >= this.canvasheight / this.blockSize||
+            // this.y + this.activeshape.y2 + 1 >= this.canvasheight / this.blockSize||
+            // this.y + this.activeshape.y3 + 1 >= this.canvasheight / this.blockSize
+        ){
+            return false;
+        }
+
+
+        // for (let i = 0; i < this.blocks.length; i++) {
+        //     if (
+        //         this.y + 1 === this.blocks[i].y && this.x === this.blocks[i].x ||
+        //         this.y + this.activeshape.y1 + 1 === this.blocks[i].y && this.x + this.activeshape.x1 === this.blocks[i].x ||
+        //         this.y + this.activeshape.y2 + 1 === this.blocks[i].y && this.x + this.activeshape.x2 === this.blocks[i].x ||
+        //         this.y + this.activeshape.y3 + 1 === this.blocks[i].y && this.x + this.activeshape.x3 === this.blocks[i].x
+        //     ) {
+        //         return false;
+        //     }
+        // }
+        return true;
+    }
+
+
     keyPressed() {
         const arrows = {
-            ArrowLeft:  {type: 'move', x: -1},
-            ArrowRight: {type: 'move', x: 1}
-            ArrowUp:    {type: 'rotate', x: 1}
+            ArrowLeft:  {x: -1},
+            ArrowRight: {x: 1}
         };
-
-        if (arrows[event.key].type === 'move')
-        {
             this.xNew = arrows[event.key].x;
 
             this.x += this.xNew;
 
-            if (
-                this.x >= this.canvaswidth / this.blockSize ||
-                this.x < 0 ||
-                this.x + this.activeshape.x1 >= this.canvaswidth / this.blockSize ||
-                this.x + this.activeshape.x1 < 0 ||
-                this.x + this.activeshape.x2 >= this.canvaswidth / this.blockSize ||
-                this.x + this.activeshape.x2 < 0 ||
-                this.x + this.activeshape.x3 >= this.canvaswidth / this.blockSize ||
-                this.x + this.activeshape.x3 < 0
-            ){
+            if (false){
+                // this.x >= this.canvaswidth / this.blockSize ||
+                // this.x < 0 ||
+                // this.x + this.activeshape.x1 >= this.canvaswidth / this.blockSize ||
+                // this.x + this.activeshape.x1 < 0 ||
+                // this.x + this.activeshape.x2 >= this.canvaswidth / this.blockSize ||
+                // this.x + this.activeshape.x2 < 0 ||
+                // this.x + this.activeshape.x3 >= this.canvaswidth / this.blockSize ||
+                // this.x + this.activeshape.x3 < 0
+
                 this.x -= this.xNew;
                 this.move = false;
             } else {
-
+                this.move = true;
             }
 
             if (this.move){
 
-                this.ctx.fillStyle = 'black';
-                this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
-
-                //Render existing blocks
-                for (let i = 0; i < this.blocks.length; i++) {
-                    this.drawBlock(this.blocks[i].x, this.blocks[i].y, this.blocks[i].color);
-                }
-
-                this.drawBlock(this.x, this.y, this.activeshape.color);
-                this.drawBlock(this.x + this.activeshape.x1 , this.y + this.activeshape.y1, this.activeshape.color);
-                this.drawBlock(this.x + this.activeshape.x2 , this.y + this.activeshape.y2, this.activeshape.color);
-                this.drawBlock(this.x + this.activeshape.x3 , this.y + this.activeshape.y3, this.activeshape.color);
-
+                this.render();
                 this.xNew = 0;
+                this.move = undefined;
 
             }
-
-        } else if (arrows[event.key].type === 'rotate') {
-
-        }
 
 
     }
@@ -171,55 +194,21 @@ class Tetris {
 
         this.run += 1;
 
-        for (let i = 0; i < this.blocks.length; i++) {
-
-        }
 
         this.x = this.xDefault;
         this.y = this.yDefault;
         this.activeshape = this.shapes[this.getRandomInt()];
         this.interval = setInterval(this.game.bind(this), this.frameRate);
     }
+
     game() {
         this.y += 1;
 
-        if (
-            this.y + 1 >= this.canvasheight / this.blockSize ||
-            this.y + this.activeshape.y1 + 1 >= this.canvasheight / this.blockSize||
-            this.y + this.activeshape.y2 + 1 >= this.canvasheight / this.blockSize||
-            this.y + this.activeshape.y3 + 1 >= this.canvasheight / this.blockSize
-        ){
-            this.reset()
+        if (this.check1()){
+            this.render()
+        } else {
+            this.reset();
         }
-
-
-        for (let i = 0; i < this.blocks.length; i++) {
-            if (
-                this.y + 1 === this.blocks[i].y && this.x === this.blocks[i].x ||
-                this.y + this.activeshape.y1 + 1 === this.blocks[i].y && this.x + this.activeshape.x1 === this.blocks[i].x ||
-                this.y + this.activeshape.y2 + 1 === this.blocks[i].y && this.x + this.activeshape.x2 === this.blocks[i].x ||
-                this.y + this.activeshape.y3 + 1 === this.blocks[i].y && this.x + this.activeshape.x3 === this.blocks[i].x
-            ) {
-                this.reset()
-            }
-        }
-
-
-        // Rendering Canvas
-        this.ctx.fillStyle = 'black';
-        this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
-
-        //Render existing blocks
-        for (let i = 0; i < this.blocks.length; i++) {
-            this.drawBlock(this.blocks[i].x, this.blocks[i].y, this.blocks[i].color);
-        }
-
-        // Rendering
-        this.drawBlock(this.x, this.y, this.activeshape.color);
-        this.drawBlock(this.x + this.activeshape.x1 , this.y + this.activeshape.y1, this.activeshape.color);
-        this.drawBlock(this.x + this.activeshape.x2 , this.y + this.activeshape.y2, this.activeshape.color);
-        this.drawBlock(this.x + this.activeshape.x3 , this.y + this.activeshape.y3, this.activeshape.color);
-
 
     }
 
