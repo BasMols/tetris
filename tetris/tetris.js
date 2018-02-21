@@ -1,22 +1,21 @@
 class Tetris {
     constructor() {
-        this.run            = 0;
-        this.frame          = 0;
-        this.x              = 0; // X changing position
-        this.y              = 0; // Y changing position
-        this.ghostY         = 0; // Y ghost
-        this.ghostcolor     = 'darkgrey';
-        this.ghostframe     = 0;
-        this.xDefault       = 5; // X Startpositie
-        this.yDefault       = -2; // Y Startpositie
-        this.rotation       = 0; // Current rotation
-        this.blockSize      = 40; // Grootte per blok in pixels
-        this.canvaswidth    = 10 * this.blockSize;
-        this.canvasheight   = 20 * this.blockSize;
-        this.started        = false; // Spel nog niet gestart
-        this.frameRate      = 500; // Aantal frames per seconde
-        this.blocks         = []; // This array will contain objects off all existing (non moving) blocks.
-        this.row            = [];
+        this.run            = 0;                            // Run counter for score
+        this.frame          = 0;                            // Frame counter for this.gameover()
+        this.x              = 0;                            // X changing position
+        this.y              = 0;                            // Y changing position
+        this.ghostY         = 0;                            // Y ghost
+        this.ghostcolor     = 'darkgrey';                   // Ghost color
+        this.ghostframe     = 0;                            // frame counter ghost will skip
+        this.xDefault       = 5;                            // X Startpositie
+        this.yDefault       = -2;                           // Y Startpositie
+        this.rotation       = 0;                            // Current rotation
+        this.blockSize      = 40;                           // Blok size in pixels
+        this.canvaswidth    = 10 * this.blockSize;          // X grid size * pixel per block
+        this.canvasheight   = 20 * this.blockSize;          // Y grid size * pixel per block
+        this.started        = false;                        // Spel nog niet gestart
+        this.frameRate      = 500;                          // Aantal frames per seconde
+        this.blocks         = [];                           // This array will contain objects off all existing (non moving) blocks.
         this.shapes         = [
             {
                 0: {
@@ -207,7 +206,7 @@ class Tetris {
                 },
                 color:"orange"
             } // L
-        ];
+        ];                        // Array with all shapes and rotations
 
         document.addEventListener("DOMContentLoaded", () => {
             this.createCanvas();
@@ -215,7 +214,8 @@ class Tetris {
         });
     }
 
-    //random int generator
+// Functions
+    //Function to generate a int between 0 and 6
     static getRandomInt() {
         return Math.floor(Math.random() * Math.floor(7));
     }
@@ -243,7 +243,7 @@ class Tetris {
         );
     }
 
-    // Function to push the active shape to the blocks array
+    // Function to push the active shape to the blocks array when they lock
     push() {
         this.blocks.push(
             {x: this.x + this.activeshape[this.rotation][0].x, y: this.y + this.activeshape[this.rotation][0].y, color: this.activeshape.color},
@@ -253,7 +253,7 @@ class Tetris {
         );
     }
 
-    // Function to render the background / the active blocks / the existing blocks using the drawBlock() Function
+    // Function to render the background / the active blocks / the existing blocks / and the ghost using the drawBlock() Function
     render() {
         // Rendering Canvas
         this.ctx.fillStyle = 'black';
@@ -277,6 +277,7 @@ class Tetris {
         this.drawBlock(this.x + this.activeshape[this.rotation][3].x, this.y + this.activeshape[this.rotation][3].y, this.activeshape.color);
     }
 
+    //Function to remove a full rown
     remove(row) {
 
         this.blocks = this.blocks.filter(function (el) {
@@ -291,7 +292,7 @@ class Tetris {
     }
 
 
-
+// Checks
     // Function to check if the active shape is at the bottom
     checkBottom(y) {
         return !(
@@ -348,7 +349,7 @@ class Tetris {
         }
     }
 
-
+    //Functions to check for any full rows
     checkRows() {
         for (let o = 0; o < this.canvasheight / this.blockSize; o++) {
             let row = 0;
@@ -365,30 +366,45 @@ class Tetris {
     }
 
 
-
+// Moves
     // Function to run when any key is pressed
     keyPressed() {
         if (this.started){
-            const keys = {
-                ArrowLeft:  {event: -1},
-                ArrowRight: {event: 1},
-                ArrowUp: {event: 'rotateright'},
-                ArrowDown: {event: 'hardLock'}
-            };
 
-            const dir = keys[event.key].event;
-            if (dir === -1 || dir === 1) {
-                this.arrowKeys(dir);
-            } else if (dir === 'rotateright' || dir === 'rotateleft') {
-                this.rotate(dir);
-            } else if (dir === 'hardLock'){
-                this.hardLock();
+            switch (event.key) {
+                case "ArrowDown":
+                    this.mainLoop(); //Call mainloop because funtion is the same
+                    break;
+                case "ArrowUp":
+                    this.rotate('rotateright');
+                    break;
+                case "ArrowLeft":
+                    this.arrowKeys(-1);
+                    break;
+                case "ArrowRight":
+                    this.arrowKeys(1);
+                    break;
+                case " ": //space
+                    this.hardLock();
+                    break;
+                case "Escape":
+                    // this.pauze();
+                    break;
+                case "z":
+                    this.rotate('rotateleft');
+                    break;
+                case "c":
+                    // this.hold();
+                    break;
+                default:
+                    return; // Quit when this doesn't handle the key event.
             }
 
         }
 
     }
 
+    //function to move the blocks;
     arrowKeys(dir) {
 
         this.x += dir;
@@ -401,6 +417,7 @@ class Tetris {
 
     }
 
+    //Function to instantly lock the block down
     hardLock(){
         this.checkGhost();
         this.y = this.ghostY;
@@ -409,6 +426,7 @@ class Tetris {
         this.reset();
     }
 
+    //Function to rotate the blocks
     rotate(dir) {
 
         if (dir === 'rotateright') {
@@ -434,8 +452,7 @@ class Tetris {
     }
 
 
-
-
+// Main gameplay loop
     // Function to start the loop. Should only be called once.
     start() {
         if (!this.started) {
@@ -486,6 +503,7 @@ class Tetris {
 
     }
 
+    //Function to run when the game ends
     gameover() {
         this.started        = false;
         this.blocks         = [];
