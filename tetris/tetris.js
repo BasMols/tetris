@@ -16,6 +16,7 @@ class Tetris {
         this.started        = false; // Spel nog niet gestart
         this.frameRate      = 500; // Aantal frames per seconde
         this.blocks         = []; // This array will contain objects off all existing (non moving) blocks.
+        this.row            = [];
         this.shapes         = [
             {
                 0: {
@@ -208,7 +209,6 @@ class Tetris {
             } // L
         ];
 
-
         document.addEventListener("DOMContentLoaded", () => {
             this.createCanvas();
             this.canvas.addEventListener('click', this.start.bind(this));
@@ -277,6 +277,21 @@ class Tetris {
         this.drawBlock(this.x + this.activeshape[this.rotation][3].x, this.y + this.activeshape[this.rotation][3].y, this.activeshape.color);
     }
 
+    remove(row) {
+
+        this.blocks = this.blocks.filter(function (el) {
+            return el.y !== row;
+        });
+        for (let i = 0; i < this.blocks.length; i++){
+            if (this.blocks[i].y < row){
+                this.blocks[i].y++;
+            }
+        }
+
+    }
+
+
+
     // Function to check if the active shape is at the bottom
     checkBottom(y) {
         return !(
@@ -333,60 +348,45 @@ class Tetris {
         }
     }
 
-    // Function to start the loop. Should only be called once.
-    start() {
-        if (!this.started) {
-            this.started = true;
-            document.addEventListener('keydown', this.keyPressed.bind(this));
-            this.reset();
+
+    checkRows() {
+        for (let o = 0; o < this.canvasheight / this.blockSize; o++) {
+            let row = 0;
+            for (let i = 0; i < this.blocks.length; i++){
+                if (this.blocks[i].y === o){
+                    row++;
+                }
+            }
+
+            if (row === this.canvaswidth / this.blockSize){
+                this.remove(o);
+            }
         }
     }
 
-    gameover() {
-        this.started        = false;
-        this.blocks         = [];
-        this.frame          = 0;
-        this.run            = 0;
-    }
 
-    // Function to select a new shape and reset the interval
-    reset() {
-        console.log(this.frame);
-        clearInterval(this.interval);
 
-        if(this.run !== 0){
-            this.push();
-        }
+    // Function to run when any key is pressed
+    keyPressed() {
+        if (this.started){
+            const keys = {
+                ArrowLeft:  {event: -1},
+                ArrowRight: {event: 1},
+                ArrowUp: {event: 'rotateright'},
+                ArrowDown: {event: 'hardLock'}
+            };
 
-        if(this.frame < 1 && this.run !== 0){
-            this.gameover();
-        } else {
-
-            this.frame = 0;
-            this.run += 1;
-            this.x = this.xDefault;
-            this.y = this.yDefault;
-            this.rotation = 0;  //Reset the rotation
-            this.activeshape = this.shapes[Tetris.getRandomInt()];
-            this.checkGhost();
-            this.interval = setInterval(this.mainLoop.bind(this), this.frameRate);
-        }
-
-    }
-
-    // Function to loop every frame of the mainLoop. If the checks (checkbottom and checkbottombox) fail, run reset()
-    mainLoop() {
-        this.y++;
-        this.frame ++;
-
-        if (this.checkBottom(this.y) && this.checkBox(this.x, this.y)){
-            this.render();
-        } else {
-            this.y --;
-            this.frame--;
-            this.reset();
+            const dir = keys[event.key].event;
+            if (dir === -1 || dir === 1) {
+                this.arrowKeys(dir);
+            } else if (dir === 'rotateright' || dir === 'rotateleft') {
+                this.rotate(dir);
+            } else if (dir === 'hardLock'){
+                this.hardLock();
+            }
 
         }
+
     }
 
     arrowKeys(dir) {
@@ -433,27 +433,64 @@ class Tetris {
 
     }
 
-    // Function to run when any key is pressed
-    keyPressed() {
-        if (this.started){
-            const keys = {
-                ArrowLeft:  {event: -1},
-                ArrowRight: {event: 1},
-                ArrowUp: {event: 'rotateright'},
-                ArrowDown: {event: 'hardLock'}
-            };
 
-            const dir = keys[event.key].event;
-            if (dir === -1 || dir === 1) {
-                this.arrowKeys(dir);
-            } else if (dir === 'rotateright' || dir === 'rotateleft') {
-                this.rotate(dir);
-            } else if (dir === 'hardLock'){
-                this.hardLock();
-            }
+
+
+    // Function to start the loop. Should only be called once.
+    start() {
+        if (!this.started) {
+            this.started = true;
+            document.addEventListener('keydown', this.keyPressed.bind(this));
+            this.reset();
+        }
+    }
+
+    // Function to loop every frame of the mainLoop. If the checks (checkbottom and checkbottombox) fail, run reset()
+    mainLoop() {
+        this.y++;
+        this.frame ++;
+
+        if (this.checkBottom(this.y) && this.checkBox(this.x, this.y)){
+            this.render();
+        } else {
+            this.y --;
+            this.frame--;
+            this.reset();
 
         }
+    }
 
+    // Function to select a new shape and reset the interval
+    reset() {
+        clearInterval(this.interval);
+
+        if(this.run !== 0){
+            this.push();
+        }
+
+        this.checkRows();
+
+        if(this.frame < 1 && this.run !== 0){
+            this.gameover();
+        } else {
+
+            this.frame = 0;
+            this.run += 1;
+            this.x = this.xDefault;
+            this.y = this.yDefault;
+            this.rotation = 0;  //Reset the rotation
+            this.activeshape = this.shapes[Tetris.getRandomInt()];
+            this.checkGhost();
+            this.interval = setInterval(this.mainLoop.bind(this), this.frameRate);
+        }
+
+    }
+
+    gameover() {
+        this.started        = false;
+        this.blocks         = [];
+        this.frame          = 0;
+        this.run            = 0;
     }
 
 }
