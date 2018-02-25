@@ -1,5 +1,8 @@
 class Tetris {
     constructor() {
+        this.blockSize      = 40;                           // Blok size in pixels
+        this.canvaswidth    = 10 * this.blockSize;          // X grid size * pixel per block
+        this.canvasheight   = 20 * this.blockSize;          // Y grid size * pixel per block
         this.run            = 0;                            // Run counter for score
         this.frame          = 0;                            // Frame counter for this.gameover()
         this.x              = 0;                            // X changing position
@@ -7,12 +10,9 @@ class Tetris {
         this.ghostY         = 0;                            // Y ghost
         this.ghostcolor     = 'darkgrey';                   // Ghost color
         this.ghostframe     = 0;                            // frame counter ghost will skip
-        this.xDefault       = 5;                            // X Startpositie
+        this.xDefault       = 4;                            // X Startpositie
         this.yDefault       = -2;                           // Y Startpositie
         this.rotation       = 0;                            // Current rotation
-        this.blockSize      = 40;                           // Blok size in pixels
-        this.canvaswidth    = 10 * this.blockSize;          // X grid size * pixel per block
-        this.canvasheight   = 20 * this.blockSize;          // Y grid size * pixel per block
         this.started        = false;                        // Spel nog niet gestart
         this.frameRate      = 500;                          // Aantal frames per seconde
         this.blocks         = [];                           // This array will contain objects off all existing (non moving) blocks.
@@ -230,6 +230,14 @@ class Tetris {
         this.ctx = this.canvas.getContext('2d');
         this.ctx.fillStyle = 'black';
         this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+
+        this.hold1 = this.shapes[Tetris.getRandomInt()];
+        this.hold = document.createElement('hold');
+        this.hold.setAttribute('id', 'hold');
+        this.hold.setAttribute('width', '100');
+        this.hold.setAttribute('height', '100');
+        document.body.appendChild(this.hold);
+
     }
 
     // Function to draw a block
@@ -394,7 +402,11 @@ class Tetris {
                     this.rotate('rotateleft');
                     break;
                 case "c":
-                    // this.hold();
+                    this.hold();
+                    break;
+                case "r":
+                    this.gameover();
+                    this.start();
                     break;
                 default:
                     return; // Quit when this doesn't handle the key event.
@@ -451,6 +463,11 @@ class Tetris {
 
     }
 
+    //Function to hold a piece
+    hold() {
+
+    }
+
 
 // Main gameplay loop
     // Function to start the loop. Should only be called once.
@@ -496,15 +513,23 @@ class Tetris {
             this.x = this.xDefault;
             this.y = this.yDefault;
             this.rotation = 0;  //Reset the rotation
-            this.activeshape = this.shapes[Tetris.getRandomInt()];
+            this.activeshape = this.hold1;
             this.checkGhost();
+
+            this.hold1 = this.shapes[Tetris.getRandomInt()];
+            this.holdbox = document.getElementById('hold');
+            this.holdbox.innerHTML = this.hold1.color;
+
             this.interval = setInterval(this.mainLoop.bind(this), this.frameRate);
+
+
         }
 
     }
 
     //Function to run when the game ends
     gameover() {
+        clearInterval(this.interval);
         this.started        = false;
         this.blocks         = [];
         this.frame          = 0;
