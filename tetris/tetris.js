@@ -402,11 +402,11 @@ class Tetris {
                     this.rotate('rotateleft');
                     break;
                 case "c":
-                    this.hold();
+                    // this.hold();
                     break;
                 case "r":
-                    this.gameover();
-                    this.start();
+                    // this.gameover();
+                    // this.start();
                     break;
                 default:
                     return; // Quit when this doesn't handle the key event.
@@ -465,7 +465,16 @@ class Tetris {
 
     //Function to hold a piece
     hold() {
+        this.hold2 = this.activeshape;
+        this.activeshape = this.hold1;
+        this.hold1 = this.hold2;
 
+        this.frame = 0;
+        this.run += 1;
+        this.x = this.xDefault;
+        this.y = this.yDefault;
+        this.rotation = 0;  //Reset the rotation
+        this.checkGhost();
     }
 
 

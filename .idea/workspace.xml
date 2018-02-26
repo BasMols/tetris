@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a653b0ee-229e-4104-9f01-be78cb10dc65" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/deployment.xml" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tetris/tetris.js" afterPath="$PROJECT_DIR$/tetris/tetris.js" />
     </list>
@@ -34,22 +33,32 @@
       <file leaf-file-name="tetris.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tetris/tetris.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="514" column="38" lean-forward="false" selection-start-line="514" selection-start-column="38" selection-end-line="514" selection-end-column="38" />
+            <state relative-caret-position="182">
+              <caret line="379" column="26" lean-forward="true" selection-start-line="379" selection-start-column="26" selection-end-line="379" selection-end-column="26" />
               <folding>
+                <element signature="n#!!block;n#constructor#0;n#Tetris#0" expanded="false" />
                 <element signature="e#1464#7185#0" expanded="false" />
+                <element signature="e#7438#7450#0" expanded="false" />
                 <element signature="n#!!block;n#getRandomInt#0;n#Tetris#0" expanded="false" />
                 <element signature="n#!!block;n#createCanvas#0;n#Tetris#0" expanded="false" />
                 <element signature="n#!!block;n#drawBlock#0;n#Tetris#0" expanded="false" />
+                <element signature="n#!!block;n#push#0;n#Tetris#0" expanded="false" />
+                <element signature="n#!!block;n#render#0;n#Tetris#0" expanded="false" />
                 <element signature="n#!!block;n#remove#0;n#Tetris#0" expanded="false" />
+                <element signature="e#11420#11429#0" expanded="false" />
                 <element signature="n#!!block;n#checkBottom#0;n#Tetris#0" expanded="false" />
+                <element signature="n#!!block;n#checkBox#0;n#Tetris#0" expanded="false" />
                 <element signature="n#!!block;n#checkSides#0;n#Tetris#0" expanded="false" />
-                <element signature="n#!!block;n#checkGhost#0;n#Tetris#0" expanded="false" />
                 <element signature="n#!!block;n#checkRows#0;n#Tetris#0" expanded="false" />
-                <element signature="n#!!block;n#keyPressed#0;n#Tetris#0" expanded="false" />
+                <element signature="e#14567#14575#0" expanded="false" />
                 <element signature="n#!!block;n#arrowKeys#0;n#Tetris#0" expanded="false" />
                 <element signature="n#!!block;n#hardLock#0;n#Tetris#0" expanded="false" />
                 <element signature="n#!!block;n#rotate#0;n#Tetris#0" expanded="false" />
+                <element signature="n#!!block;n#hold#0;n#Tetris#0" expanded="false" />
+                <element signature="n#!!block;n#start#0;n#Tetris#0" expanded="false" />
+                <element signature="n#!!block;n#mainLoop#0;n#Tetris#0" expanded="false" />
+                <marker date="1519642137051" expanded="false" signature="17851:18609" ph="{...}" />
+                <marker date="1519642137051" expanded="false" signature="18667:18849" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -86,9 +95,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
-    <option name="width" value="1504" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-1" />
+    <option name="width" value="1928" />
     <option name="height" value="1057" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -128,7 +137,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -145,7 +154,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -213,31 +222,33 @@
       <workItem from="1519297479014" duration="6429000" />
       <workItem from="1519305316438" duration="1799000" />
       <workItem from="1519376171194" duration="912000" />
+      <workItem from="1519603065970" duration="3595000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76703000" />
+    <option name="totallyTimeSpent" value="80298000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <frame x="-1" y="0" width="1928" height="1057" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Remote Host" active="false" anchor="left" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="true" show_stripe_button="true" weight="0.1663113" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" x="13" y="469" width="266" height="525" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" show_stripe_button="true" weight="0.17017913" sideWeight="0.5" order="0" side_tool="true" content_ui="combo" x="21" y="136" width="267" height="235" />
+      <window_info id="Remote Host" active="false" anchor="left" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="true" show_stripe_button="true" weight="0.1663113" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" x="228" y="504" width="162" height="442" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" show_stripe_button="true" weight="0.17017913" sideWeight="0.5" order="0" side_tool="true" content_ui="combo" x="231" y="270" width="156" height="235" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14014752" sideWeight="0.49598163" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19312169" sideWeight="0.49598163" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17960837" sideWeight="0.50401837" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17960837" sideWeight="0.50401837" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.054288816" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -255,36 +266,11 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/tetris/tetris.js</url>
-          <line>223</line>
-          <option name="timeStamp" value="50" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/tetris/tetris.js</url>
-          <line>288</line>
-          <option name="timeStamp" value="51" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/tetris/tetris.js</url>
-          <line>314</line>
-          <option name="timeStamp" value="53" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/tetris/tetris.js</url>
           <line>330</line>
           <option name="timeStamp" value="54" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/tetris/tetris.js</url>
-          <line>345</line>
-          <option name="timeStamp" value="55" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/tetris/tetris.js</url>
-          <line>360</line>
-          <option name="timeStamp" value="56" />
-        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="58" />
+      <option name="time" value="63" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -299,22 +285,72 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tetris/tetris.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10878">
-          <caret line="518" column="36" lean-forward="false" selection-start-line="518" selection-start-column="36" selection-end-line="518" selection-end-column="36" />
+        <state relative-caret-position="3465">
+          <caret line="514" column="38" lean-forward="false" selection-start-line="514" selection-start-column="38" selection-end-line="514" selection-end-column="38" />
           <folding>
+            <element signature="n#!!block;n#constructor#0;n#Tetris#0" expanded="false" />
             <element signature="e#1464#7185#0" expanded="false" />
+            <element signature="e#7438#7450#0" expanded="false" />
             <element signature="n#!!block;n#getRandomInt#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#createCanvas#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#drawBlock#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#push#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#render#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#remove#0;n#Tetris#0" expanded="false" />
+            <element signature="e#11420#11429#0" expanded="false" />
             <element signature="n#!!block;n#checkBottom#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#checkBox#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#checkSides#0;n#Tetris#0" expanded="false" />
-            <element signature="n#!!block;n#checkGhost#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#checkRows#0;n#Tetris#0" expanded="false" />
-            <element signature="n#!!block;n#keyPressed#0;n#Tetris#0" expanded="false" />
+            <element signature="e#14567#14575#0" expanded="false" />
             <element signature="n#!!block;n#arrowKeys#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#hardLock#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#rotate#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#hold#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#start#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#mainLoop#0;n#Tetris#0" expanded="false" />
+            <marker date="1519642137051" expanded="false" signature="17851:18609" ph="{...}" />
+            <marker date="1519642137051" expanded="false" signature="18667:18849" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tetris/tetris.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10878">
+          <caret line="518" column="36" lean-forward="false" selection-start-line="518" selection-start-column="36" selection-end-line="518" selection-end-column="36" />
+          <folding>
+            <element signature="n#!!block;n#constructor#0;n#Tetris#0" expanded="false" />
+            <element signature="e#1464#7185#0" expanded="false" />
+            <element signature="e#7438#7450#0" expanded="false" />
+            <element signature="n#!!block;n#getRandomInt#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#createCanvas#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#drawBlock#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#push#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#render#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#remove#0;n#Tetris#0" expanded="false" />
+            <element signature="e#11420#11429#0" expanded="false" />
+            <element signature="n#!!block;n#checkBottom#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#checkBox#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#checkSides#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#checkRows#0;n#Tetris#0" expanded="false" />
+            <element signature="e#14567#14575#0" expanded="false" />
+            <element signature="n#!!block;n#arrowKeys#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#hardLock#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#rotate#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#hold#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#start#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#mainLoop#0;n#Tetris#0" expanded="false" />
+            <marker date="1519642137051" expanded="false" signature="17851:18609" ph="{...}" />
+            <marker date="1519642137051" expanded="false" signature="18667:18849" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -332,19 +368,29 @@
         <state relative-caret-position="4242">
           <caret line="485" column="0" lean-forward="true" selection-start-line="485" selection-start-column="0" selection-end-line="485" selection-end-column="0" />
           <folding>
+            <element signature="n#!!block;n#constructor#0;n#Tetris#0" expanded="false" />
             <element signature="e#1464#7185#0" expanded="false" />
+            <element signature="e#7438#7450#0" expanded="false" />
             <element signature="n#!!block;n#getRandomInt#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#createCanvas#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#drawBlock#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#push#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#render#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#remove#0;n#Tetris#0" expanded="false" />
+            <element signature="e#11420#11429#0" expanded="false" />
             <element signature="n#!!block;n#checkBottom#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#checkBox#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#checkSides#0;n#Tetris#0" expanded="false" />
-            <element signature="n#!!block;n#checkGhost#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#checkRows#0;n#Tetris#0" expanded="false" />
-            <element signature="n#!!block;n#keyPressed#0;n#Tetris#0" expanded="false" />
+            <element signature="e#14567#14575#0" expanded="false" />
             <element signature="n#!!block;n#arrowKeys#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#hardLock#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#rotate#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#hold#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#start#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#mainLoop#0;n#Tetris#0" expanded="false" />
+            <marker date="1519642137051" expanded="false" signature="17851:18609" ph="{...}" />
+            <marker date="1519642137051" expanded="false" signature="18667:18849" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -362,19 +408,29 @@
         <state relative-caret-position="378">
           <caret line="18" column="30" lean-forward="false" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
           <folding>
+            <element signature="n#!!block;n#constructor#0;n#Tetris#0" expanded="false" />
             <element signature="e#1464#7185#0" expanded="false" />
+            <element signature="e#7438#7450#0" expanded="false" />
             <element signature="n#!!block;n#getRandomInt#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#createCanvas#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#drawBlock#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#push#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#render#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#remove#0;n#Tetris#0" expanded="false" />
+            <element signature="e#11420#11429#0" expanded="false" />
             <element signature="n#!!block;n#checkBottom#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#checkBox#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#checkSides#0;n#Tetris#0" expanded="false" />
-            <element signature="n#!!block;n#checkGhost#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#checkRows#0;n#Tetris#0" expanded="false" />
-            <element signature="n#!!block;n#keyPressed#0;n#Tetris#0" expanded="false" />
+            <element signature="e#14567#14575#0" expanded="false" />
             <element signature="n#!!block;n#arrowKeys#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#hardLock#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#rotate#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#hold#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#start#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#mainLoop#0;n#Tetris#0" expanded="false" />
+            <marker date="1519642137051" expanded="false" signature="17851:18609" ph="{...}" />
+            <marker date="1519642137051" expanded="false" signature="18667:18849" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -392,19 +448,29 @@
         <state relative-caret-position="8211">
           <caret line="391" column="0" lean-forward="false" selection-start-line="391" selection-start-column="0" selection-end-line="391" selection-end-column="0" />
           <folding>
+            <element signature="n#!!block;n#constructor#0;n#Tetris#0" expanded="false" />
             <element signature="e#1464#7185#0" expanded="false" />
+            <element signature="e#7438#7450#0" expanded="false" />
             <element signature="n#!!block;n#getRandomInt#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#createCanvas#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#drawBlock#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#push#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#render#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#remove#0;n#Tetris#0" expanded="false" />
+            <element signature="e#11420#11429#0" expanded="false" />
             <element signature="n#!!block;n#checkBottom#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#checkBox#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#checkSides#0;n#Tetris#0" expanded="false" />
-            <element signature="n#!!block;n#checkGhost#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#checkRows#0;n#Tetris#0" expanded="false" />
-            <element signature="n#!!block;n#keyPressed#0;n#Tetris#0" expanded="false" />
+            <element signature="e#14567#14575#0" expanded="false" />
             <element signature="n#!!block;n#arrowKeys#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#hardLock#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#rotate#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#hold#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#start#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#mainLoop#0;n#Tetris#0" expanded="false" />
+            <marker date="1519642137051" expanded="false" signature="17851:18609" ph="{...}" />
+            <marker date="1519642137051" expanded="false" signature="18667:18849" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -422,19 +488,29 @@
         <state relative-caret-position="7539">
           <caret line="359" column="0" lean-forward="true" selection-start-line="359" selection-start-column="0" selection-end-line="359" selection-end-column="0" />
           <folding>
+            <element signature="n#!!block;n#constructor#0;n#Tetris#0" expanded="false" />
             <element signature="e#1464#7185#0" expanded="false" />
+            <element signature="e#7438#7450#0" expanded="false" />
             <element signature="n#!!block;n#getRandomInt#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#createCanvas#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#drawBlock#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#push#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#render#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#remove#0;n#Tetris#0" expanded="false" />
+            <element signature="e#11420#11429#0" expanded="false" />
             <element signature="n#!!block;n#checkBottom#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#checkBox#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#checkSides#0;n#Tetris#0" expanded="false" />
-            <element signature="n#!!block;n#checkGhost#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#checkRows#0;n#Tetris#0" expanded="false" />
-            <element signature="n#!!block;n#keyPressed#0;n#Tetris#0" expanded="false" />
+            <element signature="e#14567#14575#0" expanded="false" />
             <element signature="n#!!block;n#arrowKeys#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#hardLock#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#rotate#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#hold#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#start#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#mainLoop#0;n#Tetris#0" expanded="false" />
+            <marker date="1519642137051" expanded="false" signature="17851:18609" ph="{...}" />
+            <marker date="1519642137051" expanded="false" signature="18667:18849" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -444,49 +520,29 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="n#!!block;n#constructor#0;n#Tetris#0" expanded="false" />
             <element signature="e#1464#7185#0" expanded="false" />
+            <element signature="e#7438#7450#0" expanded="false" />
             <element signature="n#!!block;n#getRandomInt#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#createCanvas#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#drawBlock#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#push#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#render#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#remove#0;n#Tetris#0" expanded="false" />
+            <element signature="e#11420#11429#0" expanded="false" />
             <element signature="n#!!block;n#checkBottom#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#checkBox#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#checkSides#0;n#Tetris#0" expanded="false" />
-            <element signature="n#!!block;n#checkGhost#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#checkRows#0;n#Tetris#0" expanded="false" />
-            <element signature="n#!!block;n#keyPressed#0;n#Tetris#0" expanded="false" />
+            <element signature="e#14567#14575#0" expanded="false" />
             <element signature="n#!!block;n#arrowKeys#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#hardLock#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#rotate#0;n#Tetris#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tetris/tetris.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#1464#7185#0" expanded="false" />
-            <element signature="n#!!block;n#getRandomInt#0;n#Tetris#0" expanded="false" />
-            <element signature="n#!!block;n#createCanvas#0;n#Tetris#0" expanded="false" />
-            <element signature="n#!!block;n#drawBlock#0;n#Tetris#0" expanded="false" />
-            <element signature="n#!!block;n#remove#0;n#Tetris#0" expanded="false" />
-            <element signature="n#!!block;n#checkBottom#0;n#Tetris#0" expanded="false" />
-            <element signature="n#!!block;n#checkSides#0;n#Tetris#0" expanded="false" />
-            <element signature="n#!!block;n#checkGhost#0;n#Tetris#0" expanded="false" />
-            <element signature="n#!!block;n#checkRows#0;n#Tetris#0" expanded="false" />
-            <element signature="n#!!block;n#keyPressed#0;n#Tetris#0" expanded="false" />
-            <element signature="n#!!block;n#arrowKeys#0;n#Tetris#0" expanded="false" />
-            <element signature="n#!!block;n#hardLock#0;n#Tetris#0" expanded="false" />
-            <element signature="n#!!block;n#rotate#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#hold#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#start#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#mainLoop#0;n#Tetris#0" expanded="false" />
+            <marker date="1519642137051" expanded="false" signature="17851:18609" ph="{...}" />
+            <marker date="1519642137051" expanded="false" signature="18667:18849" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -504,19 +560,29 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="n#!!block;n#constructor#0;n#Tetris#0" expanded="false" />
             <element signature="e#1464#7185#0" expanded="false" />
+            <element signature="e#7438#7450#0" expanded="false" />
             <element signature="n#!!block;n#getRandomInt#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#createCanvas#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#drawBlock#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#push#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#render#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#remove#0;n#Tetris#0" expanded="false" />
+            <element signature="e#11420#11429#0" expanded="false" />
             <element signature="n#!!block;n#checkBottom#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#checkBox#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#checkSides#0;n#Tetris#0" expanded="false" />
-            <element signature="n#!!block;n#checkGhost#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#checkRows#0;n#Tetris#0" expanded="false" />
-            <element signature="n#!!block;n#keyPressed#0;n#Tetris#0" expanded="false" />
+            <element signature="e#14567#14575#0" expanded="false" />
             <element signature="n#!!block;n#arrowKeys#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#hardLock#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#rotate#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#hold#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#start#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#mainLoop#0;n#Tetris#0" expanded="false" />
+            <marker date="1519642137051" expanded="false" signature="17851:18609" ph="{...}" />
+            <marker date="1519642137051" expanded="false" signature="18667:18849" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -534,19 +600,69 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="n#!!block;n#constructor#0;n#Tetris#0" expanded="false" />
             <element signature="e#1464#7185#0" expanded="false" />
+            <element signature="e#7438#7450#0" expanded="false" />
             <element signature="n#!!block;n#getRandomInt#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#createCanvas#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#drawBlock#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#push#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#render#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#remove#0;n#Tetris#0" expanded="false" />
+            <element signature="e#11420#11429#0" expanded="false" />
             <element signature="n#!!block;n#checkBottom#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#checkBox#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#checkSides#0;n#Tetris#0" expanded="false" />
-            <element signature="n#!!block;n#checkGhost#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#checkRows#0;n#Tetris#0" expanded="false" />
-            <element signature="n#!!block;n#keyPressed#0;n#Tetris#0" expanded="false" />
+            <element signature="e#14567#14575#0" expanded="false" />
             <element signature="n#!!block;n#arrowKeys#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#hardLock#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#rotate#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#hold#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#start#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#mainLoop#0;n#Tetris#0" expanded="false" />
+            <marker date="1519642137051" expanded="false" signature="17851:18609" ph="{...}" />
+            <marker date="1519642137051" expanded="false" signature="18667:18849" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tetris/tetris.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!block;n#constructor#0;n#Tetris#0" expanded="false" />
+            <element signature="e#1464#7185#0" expanded="false" />
+            <element signature="e#7438#7450#0" expanded="false" />
+            <element signature="n#!!block;n#getRandomInt#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#createCanvas#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#drawBlock#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#push#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#render#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#remove#0;n#Tetris#0" expanded="false" />
+            <element signature="e#11420#11429#0" expanded="false" />
+            <element signature="n#!!block;n#checkBottom#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#checkBox#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#checkSides#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#checkRows#0;n#Tetris#0" expanded="false" />
+            <element signature="e#14567#14575#0" expanded="false" />
+            <element signature="n#!!block;n#arrowKeys#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#hardLock#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#rotate#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#hold#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#start#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#mainLoop#0;n#Tetris#0" expanded="false" />
+            <marker date="1519642137051" expanded="false" signature="17851:18609" ph="{...}" />
+            <marker date="1519642137051" expanded="false" signature="18667:18849" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -564,19 +680,29 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="n#!!block;n#constructor#0;n#Tetris#0" expanded="false" />
             <element signature="e#1464#7185#0" expanded="false" />
+            <element signature="e#7438#7450#0" expanded="false" />
             <element signature="n#!!block;n#getRandomInt#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#createCanvas#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#drawBlock#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#push#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#render#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#remove#0;n#Tetris#0" expanded="false" />
+            <element signature="e#11420#11429#0" expanded="false" />
             <element signature="n#!!block;n#checkBottom#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#checkBox#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#checkSides#0;n#Tetris#0" expanded="false" />
-            <element signature="n#!!block;n#checkGhost#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#checkRows#0;n#Tetris#0" expanded="false" />
-            <element signature="n#!!block;n#keyPressed#0;n#Tetris#0" expanded="false" />
+            <element signature="e#14567#14575#0" expanded="false" />
             <element signature="n#!!block;n#arrowKeys#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#hardLock#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#rotate#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#hold#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#start#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#mainLoop#0;n#Tetris#0" expanded="false" />
+            <marker date="1519642137051" expanded="false" signature="17851:18609" ph="{...}" />
+            <marker date="1519642137051" expanded="false" signature="18667:18849" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -586,19 +712,29 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="n#!!block;n#constructor#0;n#Tetris#0" expanded="false" />
             <element signature="e#1464#7185#0" expanded="false" />
+            <element signature="e#7438#7450#0" expanded="false" />
             <element signature="n#!!block;n#getRandomInt#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#createCanvas#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#drawBlock#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#push#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#render#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#remove#0;n#Tetris#0" expanded="false" />
+            <element signature="e#11420#11429#0" expanded="false" />
             <element signature="n#!!block;n#checkBottom#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#checkBox#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#checkSides#0;n#Tetris#0" expanded="false" />
-            <element signature="n#!!block;n#checkGhost#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#checkRows#0;n#Tetris#0" expanded="false" />
-            <element signature="n#!!block;n#keyPressed#0;n#Tetris#0" expanded="false" />
+            <element signature="e#14567#14575#0" expanded="false" />
             <element signature="n#!!block;n#arrowKeys#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#hardLock#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#rotate#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#hold#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#start#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#mainLoop#0;n#Tetris#0" expanded="false" />
+            <marker date="1519642137051" expanded="false" signature="17851:18609" ph="{...}" />
+            <marker date="1519642137051" expanded="false" signature="18667:18849" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -622,19 +758,29 @@
         <state relative-caret-position="1701">
           <caret line="81" column="0" lean-forward="true" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
           <folding>
+            <element signature="n#!!block;n#constructor#0;n#Tetris#0" expanded="false" />
             <element signature="e#1464#7185#0" expanded="false" />
+            <element signature="e#7438#7450#0" expanded="false" />
             <element signature="n#!!block;n#getRandomInt#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#createCanvas#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#drawBlock#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#push#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#render#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#remove#0;n#Tetris#0" expanded="false" />
+            <element signature="e#11420#11429#0" expanded="false" />
             <element signature="n#!!block;n#checkBottom#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#checkBox#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#checkSides#0;n#Tetris#0" expanded="false" />
-            <element signature="n#!!block;n#checkGhost#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#checkRows#0;n#Tetris#0" expanded="false" />
-            <element signature="n#!!block;n#keyPressed#0;n#Tetris#0" expanded="false" />
+            <element signature="e#14567#14575#0" expanded="false" />
             <element signature="n#!!block;n#arrowKeys#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#hardLock#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#rotate#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#hold#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#start#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#mainLoop#0;n#Tetris#0" expanded="false" />
+            <marker date="1519642137051" expanded="false" signature="17851:18609" ph="{...}" />
+            <marker date="1519642137051" expanded="false" signature="18667:18849" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -644,19 +790,29 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="n#!!block;n#constructor#0;n#Tetris#0" expanded="false" />
             <element signature="e#1464#7185#0" expanded="false" />
+            <element signature="e#7438#7450#0" expanded="false" />
             <element signature="n#!!block;n#getRandomInt#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#createCanvas#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#drawBlock#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#push#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#render#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#remove#0;n#Tetris#0" expanded="false" />
+            <element signature="e#11420#11429#0" expanded="false" />
             <element signature="n#!!block;n#checkBottom#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#checkBox#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#checkSides#0;n#Tetris#0" expanded="false" />
-            <element signature="n#!!block;n#checkGhost#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#checkRows#0;n#Tetris#0" expanded="false" />
-            <element signature="n#!!block;n#keyPressed#0;n#Tetris#0" expanded="false" />
+            <element signature="e#14567#14575#0" expanded="false" />
             <element signature="n#!!block;n#arrowKeys#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#hardLock#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#rotate#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#hold#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#start#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#mainLoop#0;n#Tetris#0" expanded="false" />
+            <marker date="1519642137051" expanded="false" signature="17851:18609" ph="{...}" />
+            <marker date="1519642137051" expanded="false" signature="18667:18849" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -680,19 +836,29 @@
         <state relative-caret-position="629">
           <caret line="37" column="35" lean-forward="false" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="35" />
           <folding>
+            <element signature="n#!!block;n#constructor#0;n#Tetris#0" expanded="false" />
             <element signature="e#1464#7185#0" expanded="false" />
+            <element signature="e#7438#7450#0" expanded="false" />
             <element signature="n#!!block;n#getRandomInt#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#createCanvas#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#drawBlock#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#push#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#render#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#remove#0;n#Tetris#0" expanded="false" />
+            <element signature="e#11420#11429#0" expanded="false" />
             <element signature="n#!!block;n#checkBottom#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#checkBox#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#checkSides#0;n#Tetris#0" expanded="false" />
-            <element signature="n#!!block;n#checkGhost#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#checkRows#0;n#Tetris#0" expanded="false" />
-            <element signature="n#!!block;n#keyPressed#0;n#Tetris#0" expanded="false" />
+            <element signature="e#14567#14575#0" expanded="false" />
             <element signature="n#!!block;n#arrowKeys#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#hardLock#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#rotate#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#hold#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#start#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#mainLoop#0;n#Tetris#0" expanded="false" />
+            <marker date="1519642137051" expanded="false" signature="17851:18609" ph="{...}" />
+            <marker date="1519642137051" expanded="false" signature="18667:18849" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -717,22 +883,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tetris/tetris.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="514" column="38" lean-forward="false" selection-start-line="514" selection-start-column="38" selection-end-line="514" selection-end-column="38" />
+        <state relative-caret-position="182">
+          <caret line="379" column="26" lean-forward="true" selection-start-line="379" selection-start-column="26" selection-end-line="379" selection-end-column="26" />
           <folding>
+            <element signature="n#!!block;n#constructor#0;n#Tetris#0" expanded="false" />
             <element signature="e#1464#7185#0" expanded="false" />
+            <element signature="e#7438#7450#0" expanded="false" />
             <element signature="n#!!block;n#getRandomInt#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#createCanvas#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#drawBlock#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#push#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#render#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#remove#0;n#Tetris#0" expanded="false" />
+            <element signature="e#11420#11429#0" expanded="false" />
             <element signature="n#!!block;n#checkBottom#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#checkBox#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#checkSides#0;n#Tetris#0" expanded="false" />
-            <element signature="n#!!block;n#checkGhost#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#checkRows#0;n#Tetris#0" expanded="false" />
-            <element signature="n#!!block;n#keyPressed#0;n#Tetris#0" expanded="false" />
+            <element signature="e#14567#14575#0" expanded="false" />
             <element signature="n#!!block;n#arrowKeys#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#hardLock#0;n#Tetris#0" expanded="false" />
             <element signature="n#!!block;n#rotate#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#hold#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#start#0;n#Tetris#0" expanded="false" />
+            <element signature="n#!!block;n#mainLoop#0;n#Tetris#0" expanded="false" />
+            <marker date="1519642137051" expanded="false" signature="17851:18609" ph="{...}" />
+            <marker date="1519642137051" expanded="false" signature="18667:18849" ph="{...}" />
           </folding>
         </state>
       </provider>
